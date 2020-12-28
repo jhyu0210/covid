@@ -1,11 +1,10 @@
 
 function number(num) {
-  if(num== nul || num == undefined){
+  if(num=== null || num === undefined){
     return 'unknown';
   }
-  return num.toString();
-
+  return num.toLocaleString();
 }
 export default {
   number,
-};
+}

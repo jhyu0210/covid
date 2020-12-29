@@ -1,8 +1,17 @@
 <script context="module">
-  export async function preload(page) {
-    console.log(page)
-    return { state: page.params['state']}
-}
+
+  import stateNames from '../data/stateNames.js';
+	export async function preload(page){
+		console.log("error page");
+    const state = page.params["state"];
+    console.log(state)
+		if(stateNames.find(s => s.abbreviation === state) === undefined){
+      console.log("should get errror")
+			this.error(404, 'State Not Found');
+			return;
+		}
+		return {state: page.params["state"]};
+	}
 </script>
 <script>
   import CovidStat from '../components/CovidStat.svelte'

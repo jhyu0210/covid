@@ -13,7 +13,8 @@ function usStats(data){
     hospitalized:format.number(usStatsRaw.hospitalized),
     icu: format.number(usStatsRaw.inIcuCurrently),
     tested: format.number(usStatsRaw.totalTestResults),
-    updated: format.number(usStatsRaw.lastModified),
+    // updated: format.number(usStatsRaw.lastModified),
+    updated: moment(usStatsRaw.lastModified).format('LLLL'),
   };
   // return {
   //   cases:format.number(usStatsRaw.positive),

@@ -7,11 +7,11 @@
 
 {#if status !== 404}
   <div class="container">
-    <article class="bg-red-600">
-      <div class="message-header">
-        <p>Error</p>
+    <article>
+      <div class="h-9 bg-red-500">
+        <p class="pl-1 pt-1 font-bold text-gray-100">Error</p>
       </div>
-      <div class="message-body">{error.message}</div>
+      <div class="message-body ml-5">{error.message}</div>
     </article> 
   </div>
 {/if}
@@ -20,7 +20,7 @@
   <div class="container">
     <article class="message">
       <div class="h-9 bg-yellow-500">
-        <p class="pt-1 font-bold ">Page Not Found</p>
+        <p class="pt-1 font-bold text-gray-100">Page Not Found</p>
       </div>
       <div class="message-body ml-5">
         <a href="/"><strong>Click here</strong></a>

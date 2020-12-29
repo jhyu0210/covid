@@ -1,7 +1,6 @@
 <script context="module">
 	import requests from '../data/requests.js';
 
-
 	export async function preload(page){
 		try {
 			const usStats = await requests.usStats();
@@ -20,7 +19,7 @@
 	import CovidStat from '../components/CovidStat.svelte'
 	import CovidChart from '../components/CovidChart.svelte'
 	import TableContainer from '../components/TableContainer.svelte'
-import About from './about.svelte';
+	import About from './about.svelte';
 	export let usStats;
 	console.log(`US STATS : ${JSON.stringify(usStats)}`);
 

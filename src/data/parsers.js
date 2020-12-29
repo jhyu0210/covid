@@ -1,33 +1,31 @@
 import format from './format.js';
 import moment from 'moment';
+
 function usStats(data){
   const [usStatsRaw] = data;
-  console.log(usStatsRaw);
-  console.log(format.number(123));
-  console.log(format.number(usStatsRaw.positive));
+  return parseStats(usStatsRaw);
+}
+
+function stateStats(state,data){
+  const stateRawData = data.find(d=>d.state ===state);
+  return parseStats(stateRawData);
+}
+
+
+function parseStats(rawStats) {
   return {
-    cases: format.number(usStatsRaw.positive),
-    deaths: format.number(usStatsRaw.death),
-    recovered: format.number(usStatsRaw.recovered),
-    vantilator: format.number(usStatsRaw.onVentilatorCurrently),
-    hospitalized:format.number(usStatsRaw.hospitalized),
-    icu: format.number(usStatsRaw.inIcuCurrently),
-    tested: format.number(usStatsRaw.totalTestResults),
-    // updated: format.number(usStatsRaw.lastModified),
-    updated: moment(usStatsRaw.lastModified).format('LLLL'),
+    cases: format.number(rawStats.positive),
+    deaths: format.number(rawStats.death),
+    recovered: format.number(rawStats.recovered),
+    vantilator: format.number(rawStats.onVentilatorCurrently),
+    hospitalized:format.number(rawStats.hospitalized),
+    icu: format.number(rawStats.inIcuCurrently),
+    tested: format.number(rawStats.totalTestResults),
+    // updated: format.number(rawStats.lastModified),
+    updated: moment(rawStats.lastModified).format('LLLL'),
   };
-  // return {
-  //   cases:format.number(usStatsRaw.positive),
-  //   deaths: usStatsRaw.death,
-  //   recovered: usStatsRaw.recovered,
-  //   vantilator: usStatsRaw.onVentilatorCurrently,
-  //   hospitalized:usStatsRaw.hospitalized,
-  //   icu: usStatsRaw.inIcuCurrently,
-  //   tested: usStatsRaw.totalTestResults,
-  //   updated: moment(usStatsRaw.lastModified).format('LLLL'),
-  // };
 }
 
 export default {
-  usStats
+  usStats, stateStats
 }

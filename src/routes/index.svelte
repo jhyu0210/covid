@@ -4,7 +4,8 @@
 	export async function preload(page){
 		try {
 			const usStats = await requests.usStats();
-			return {usStats}; 
+			const historic = await requests.historicUS();
+			return {usStats, historic}; 
 		}catch(e){
 			this.error(
         500,
@@ -21,6 +22,7 @@
 	import TableContainer from '../components/TableContainer.svelte'
 	import About from './about.svelte';
 	export let usStats;
+	export let historic;
 	console.log(`US STATS : ${JSON.stringify(usStats)}`);
 
 </script>
@@ -39,7 +41,9 @@
 </div>
 <div class="max-w-screen-xl">
 	<CovidStat  {...usStats}/>
-	<CovidChart />
+
+	<CovidChart historicData={historic} title="US-Covid-19"/>
+
 	<TableContainer />
 </div>
 

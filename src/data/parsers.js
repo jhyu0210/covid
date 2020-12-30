@@ -92,7 +92,7 @@ function parseChart(historicData, key, label, color) {
 function statesTable(statesData){
   return statesData.map((data) => {
     const { name } = stateNames.find((d)=>d.abbreviation === data.state);
-    console.log(">>> inParsers", name);
+    // console.log(">>> inParsers", name);
     return {
       cases: format.number(data.positive),
       death: format.number(data.death),

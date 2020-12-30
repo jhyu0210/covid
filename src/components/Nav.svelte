@@ -8,8 +8,8 @@
 		console.log(isOpen);
 	}
 </script>
-<h4>{segment}</h4>
-<span>{isOpen}</span>
+<!-- <h4>{segment}</h4>
+<span>{isOpen}</span> -->
 <!-- <nav class="navbar" role="navigation" arial-label="main navigation">
 	<div class="navbar-brand">
 		<a href="/" clss="navbar-item">

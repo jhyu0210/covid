@@ -1,39 +1,43 @@
 <script>
-  export let states;
+  export let stateName = "";
+  export let sortBy = "name";
 </script>
 
 <style>
-  table {
+  input,
+  .select,
+  select {
     width: 100%;
   }
-  .section {
-    padding: 0.5rem 1.5rem;
+  .column {
+    padding-left: 0;
   }
 </style>
 
 <div class="section">
   <div class="container">
-    <table class="table is-bordered is-striped">
-      <thead>
-        <tr>
-          <th>State</th>
-          <th>Cases</th>
-          <th>Deaths</th>
-          <th>Total Tested</th>
-        </tr>
-      </thead>
-      <tbody>
-        {#each states as state (state.state)}
-          <tr>
-            <td>
-              <a href={state.state}>{state.fullStateName}</a>
-            </td>
-            <td>{state.cases}</td>
-            <td>{state.death}</td>
-            <td>{state.tested}</td>
-          </tr>
-        {/each}
-      </tbody>
-    </table>
+    <div class="columns">
+      <div class="column is-6">
+        <input
+          type="text"
+          class="input"
+          bind:value={stateName}
+          placeholder="Filter States" />
+
+      </div>
+      <div class="column is-6">
+        <div class="select">
+          <select bind:value={sortBy}>
+            <option value="name">By State Name</option>
+            <option value="cases">Cases</option>
+            <option value="deaths">Death</option>
+            <option value="tested">Tested</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
   </div>
+
 </div>

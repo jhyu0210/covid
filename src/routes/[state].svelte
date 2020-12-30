@@ -6,7 +6,7 @@
 	export async function preload(page){
 		// console.log("error page");
     const state = page.params["state"];
-    console.log(state)
+    // console.log(state)
 		if(stateNames.find(s => s.abbreviation === state) === undefined){
       // console.log("should get errror")
 			this.error(404, 'State Not Found');
@@ -19,7 +19,7 @@
       return {state, stats,historic};
 
     } catch (e) {
-      console.log(e);//
+      // console.log(e);//
       this.error(
         500,
         "There was an error in calling the api, please try again in 5 minutes."
@@ -43,7 +43,7 @@
 
 <div class="section header">
 	<div class="container">
-		<h1>Covid 19 {state}</h1>
+		<h1>Covid 19 - {state}</h1>
 	</div>
 </div>
 

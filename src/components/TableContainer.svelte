@@ -25,5 +25,5 @@
   }
 </script>
 
-<!-- <TableFilter bind:stateName bind:sortBy /> -->
+<TableFilter bind:stateName bind:sortBy />
 <Table {states} />

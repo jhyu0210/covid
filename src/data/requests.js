@@ -36,7 +36,7 @@ async function historicState(state) {
 async function statesData() {
   const response = await axios.get('https://covidtracking.com/api/v1/states/current.json');
   const res =  parsers.statesTable(response.data);
-  console.log(res);
+  // console.log(res);
   return res;
 
 }

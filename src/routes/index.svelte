@@ -37,7 +37,7 @@
 
 
 <div class="text-center mb-3">
-		<h1 class="font-bold text-2xl">Covid 19 US</h1>
+		<h1 class="font-bold text-2xl">Covid 19 - US</h1>
 </div>
 <div class="max-w-screen-xl">
 	<CovidStat  {...usStats}/>

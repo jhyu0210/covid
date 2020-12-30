@@ -1,6 +1,6 @@
 <script>
   export let states;
-  console.log(">>> Table",states)
+  // console.log(">>> Table",states)
 </script>
 
 <style>

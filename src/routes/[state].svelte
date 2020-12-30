@@ -28,6 +28,7 @@
     }
 	}
 </script>
+
 <script>
   import CovidStat from '../components/CovidStat.svelte'
   import CovidChart from '../components/CovidChart.svelte'

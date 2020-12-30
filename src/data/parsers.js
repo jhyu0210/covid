@@ -58,10 +58,10 @@ function parseHistoric(historicData){
   ].reduce((prev, next) => {
     const dLength=historicData.filter((d) => d[next.key]).length;
     if (dLength > 4) { //why??4?
-     console.log("length",dLength,next.key);
+    //  console.log("length",dLength,next.key);
       prev.push(parseChart(historicData, next.key, next.label, next.color));
     }
-    console.log(JSON.stringify(prev,null,2))
+    // console.log(JSON.stringify(prev))
     return prev;
   }, []);
 }

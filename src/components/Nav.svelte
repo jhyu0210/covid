@@ -3,9 +3,9 @@
 	let active =  false;
 	let isOpen =  false;
 	function toggle() { 
-		console.log(isOpen)
+		// console.log(isOpen)
 		isOpen = !isOpen
-		console.log(isOpen);
+		// console.log(isOpen);
 	}
 </script>
 <!-- <h4>{segment}</h4>

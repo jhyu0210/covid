@@ -15,9 +15,11 @@
     
     try {
       const stats = await requests.stateStats(state);
-      return {state, stats};
+      const historic = await requests.historicState(state);
+      return {state, stats,historic};
 
     } catch (e) {
+      console.log(e);//
       this.error(
         500,
         "There was an error in calling the api, please try again in 5 minutes."
@@ -32,6 +34,7 @@
   import TableContainer from '../components/TableContainer.svelte'
   export let state;
   export let stats;
+  export let historic;
 </script>
 
 <svelte:head>
@@ -40,10 +43,10 @@
 
 <div class="section header">
 	<div class="container">
-		<h1>Covid 19 US</h1>
+		<h1>Covid 19 {state}</h1>
 	</div>
 </div>
 
 <h1>{state}</h1>
 <CovidStat  {...stats}/>
-<CovidChart />
+<CovidChart historicData={historic} title= "Covid 19 -{state}"/>

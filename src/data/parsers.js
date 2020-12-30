@@ -14,6 +14,11 @@ function historicUS(historicData){
   return parseHistoric(historicData);
 }
 
+function historicState(state, historicData){
+  const stateHistoric = historicData.filter((d) => d.state===state);
+  return parseHistoric(stateHistoric);
+}
+
 
 function parseStats(rawStats) {
   return {
@@ -152,5 +157,5 @@ function parseChart(historicData, key, label, color) {
 }
 
 export default {
-  usStats, stateStats, historicUS
+  usStats, stateStats, historicUS, historicState
 }

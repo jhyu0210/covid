@@ -4,9 +4,10 @@
 	export async function preload(page){
 		try {
 			const usStats = await requests.usStats();
-			const historic = await requests.historicUS();
-			return {usStats, historic}; 
-		}catch(e){
+			// const historic = await requests.historicUS();
+			const statesData = await requests.statesData();
+			return {usStats, historic,statesData}; 
+		} catch(e) {
 			this.error(
         500,
         "There was an error in calling the api, please try again in 5 minutes."
@@ -22,8 +23,10 @@
 	import TableContainer from '../components/TableContainer.svelte'
 	import About from './about.svelte';
 	export let usStats;
-	export let historic;
+	// export let historic;
+	export let statesData;
 	console.log(`US STATS : ${JSON.stringify(usStats)}`);
+	console.log(`US States STATS : ${JSON.stringify(statesData)}`);
 
 </script>
 
@@ -42,7 +45,7 @@
 <div class="max-w-screen-xl">
 	<CovidStat  {...usStats}/>
 
-	<CovidChart historicData={historic} title="US-Covid-19"/>
+	<!-- <CovidChart historicData={historic} title="US-Covid-19"/> -->
 
 	<TableContainer />
 </div>

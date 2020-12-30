@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   import { onMount, onDestroy } from "svelte";
   import Chart from "chart.js";
 
@@ -85,4 +85,4 @@
   <div class="container">
     <canvas bind:this={chartElement} />
   </div>
-{/if}
+{/if} -->

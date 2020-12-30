@@ -49,4 +49,4 @@
 
 <h1>{state}</h1>
 <CovidStat  {...stats}/>
-<CovidChart historicData={historic} title= "Covid 19 -{state}"/>
+<!-- <CovidChart historicData={historic} title= "Covid 19 -{state}"/> -->

@@ -20,7 +20,7 @@ async function stateStats(state) {
 }
 
 async function historicUS() {
-  const response = await axios.get('https://covidtracking.com/api/us/daily');
+  const response = await axios.get('https://covidtracking.com/api/us/daily');//맞음..
     // console.log(response.data.toString());
     return parsers.historicUS(response.data);
 
@@ -33,6 +33,13 @@ async function historicState(state) {
 
 }
 
+async function statesData() {
+  const response = await axios.get('https://covidtracking.com/api/v1/states/current.json');
+  const res =  parsers.statesTable(response.data);
+  console.log(res);
+  return res;
+
+}
 export default {
-  usStats, stateStats, historicUS, historicState 
+  usStats, stateStats, historicUS, historicState, statesData 
 };

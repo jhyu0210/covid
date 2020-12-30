@@ -31,7 +31,7 @@ function parseStats(rawStats) {
     icu: format.number(rawStats.inIcuCurrently),
     tested: format.number(rawStats.totalTestResults),
     // updated: format.number(rawStats.lastModified),
-    updated: moment(rawStats.lastModified).format('LLLL'),
+    updated: moment(rawStats.lastModified).format('LT'),
   };
 }
 function parseHistoric(historicData) {
@@ -94,10 +94,10 @@ function statesTable(statesData){
     const { name } = stateNames.find((d)=>d.abbreviation === data.state);
     console.log(">>> inParsers", name);
     return {
-      cases: data.positive,
-      death: data.death,
-      tested: data.totalTestResults,
-      state: data.state,
+      cases: format.number(data.positive),
+      death: format.number(data.death),
+      tested: format.number(data.totalTestResults),
+      state: format.number(data.state),
       fullStateName: name,
     }
   })

@@ -4,6 +4,9 @@
 
 	const dev = process.env.NODE_ENV === 'development';
 </script>
+<svelte:head>
+  <title>Error - {status}</title>
+</svelte:head>
 
 {#if status !== 404}
   <div class="container">

@@ -95,7 +95,7 @@ function statesTable(statesData){
     // console.log(">>> inParsers", name);
     return {
       cases: format.number(data.positive),
-      death: format.number(data.death),
+      deaths: format.number(data.death),
       tested: format.number(data.totalTestResults),
       state: format.number(data.state),
       fullStateName: name,

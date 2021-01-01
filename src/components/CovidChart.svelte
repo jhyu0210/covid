@@ -11,11 +11,13 @@
 
   onMount(() => {
     if (historicData && document.body.clientWidth > 680) {
+      console.log("create chart.. screen width: ", document.body.clientWidth);
       createChart();
       return;
     }
-
+    
     hideChart = false;
+    console.log("hideChart ....", hideChart);
   });
 
   onDestroy(()=> {
